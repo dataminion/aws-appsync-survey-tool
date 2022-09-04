@@ -18,7 +18,7 @@ type Survey
 
 type Questionnaire
   @model (subscriptions: { level: off })
-  @auth (rules: [{allow: groups, groups: ["Users"]}])
+  @auth (rules: [{allow: groups, groups: ["SurveyAdmins","Users"]}])
 {
   id: ID!
   name: String!
@@ -35,7 +35,7 @@ enum QuestionnaireType {
 
 type Question
   @model (subscriptions: { level: off })
-  @auth (rules: [{allow: groups, groups: ["Users"]}])
+  @auth (rules: [{allow: groups, groups: ["SurveyAdmins","Users"]}])
 {
     id: ID!
     qu: String!
